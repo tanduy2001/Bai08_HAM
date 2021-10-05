@@ -1,0 +1,26 @@
+<html></html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polinom</title>
+</head>
+<body>
+    <script>
+        //Polinom
+        function isPolinom(m) {
+            var rv,temp,mod;
+            temp = m; rv = 0;
+            while (m > 0); {
+                mod = m % 10; 
+                m = Math.round(m/10);
+                rv *= 10 + mod;
+            }
+            return temp == rv;
+        }
+        m = parseInt(prompt("Nhập vào số cần kiểm tra ="))
+        isPolinom(m) ? console.log("m là số Polinom"): console.log("m Không phải là só Polinom");
+    </script>  
+</body>
+</html>

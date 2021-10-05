@@ -1,0 +1,44 @@
+<html></html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài2: Giải phương trình bậc 2</title>
+</head>
+<body>
+    <script>
+        function giaiPTBAC2(x,y,z) {
+            if (x == 0 && y == 0 && z == 0) {
+                document.write("Phương trình có vô số nghiệm!");
+            }else if (x == 0 && y == 0 && z !== 0) {
+                document.write("Phương trình vô nghiệm!");
+            }else if (x == 0 && y !== 0 ) {
+                document.write("Phương trình có 1 nghiệm duy nhất" + (-1 * z)/y);
+        }else {
+            var denta = y*y - 4*x*z;
+            if (denta < 0) {
+                document.write("Phương trình vô nghiệm!");
+            }else if (denta == 0) {
+                var kq = (-1*y)/(2*x);
+                document.write("Phương trình có nghiệm kép x1 = x2 = " + kq);
+            }else {
+                var x1 = (-1 * y + Math.sqrt(denta))/ (2*x);
+                var x2 = (-1 * y + Math.sqrt(denta))/ (2*x);
+                document.write("Phương trình có 2 nghiệm phân biệt là: ");
+                document.write("<br/>");
+                document.write("x1 = " + x1);
+                document.write("<br/>");
+                document.write( "x2 = " + x2);
+            }
+        }
+    }
+    var hesoA = praseInt(prompt("Nhập Vào hệ số a ="));
+    var hesoB = praseInt(prompt("Nhập Vào hệ số b ="));
+    var hesoC = praseInt(prompt("Nhập Vào hệ số c ="));
+    document.writeln("Phương trình " + hesoA + "x^2 +" + hesoB + "y +" + hesoC +"=0");
+    document.writeln("<br/>");
+    giaiPTBAC2(hesoA,hesoB,hesoC);
+    </script>   
+</body>
+</html>
